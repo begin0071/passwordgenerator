@@ -129,19 +129,19 @@ var upperCase = [
 var passwordArray = []; 
 
 function askQuestions() {
-    var response = prompt(`How many characters?
-  Must be between 8 and 128`);
+    var response = prompt(`How many characters would you like your password to be?
+  Must be between 9 and 48`);
     numberOfChars = parseInt(response);
-    if (numberOfChars < 8 || numberOfChars > 128 || isNaN(numberOfChars)) {
-      alert("Uh-oh! The password must be between 8 and 128 characters, please try again")
+    if (numberOfChars < 9 || numberOfChars > 48 || isNaN(numberOfChars)) {
+      alert(" Please Try Again")
       generatePassword()
       return
     }
 
-    okToUseSpecialChars = confirm("Do you want to use special characters?");
-    okToUseLowercase = confirm("Do you want to use lowercase letters?");
-    okToUseUppercase = confirm("Do you want to use uppercase letters?");
-    okToUseNumbers = confirm("Do you want to use numbers?");
+    okToUseSpecialChars = confirm("Do you want your password to contain special characters?");
+    okToUseLowercase = confirm("Do you want your password to contain lowercase letters?");
+    okToUseUppercase = confirm("Do you want your password to contain uppercase letters?");
+    okToUseNumbers = confirm("Do you want your password to contain numbers?");
   }
   
   
@@ -179,7 +179,7 @@ function askQuestions() {
       passwordArray = passwordArray.concat(numbers);
     }
     if (okToUseSpecialChars == false && okToUseLowercase == false && okToUseUppercase == false && okToUseNumbers == false) { 
-      alert("Uh-oh! You must choose at least one criteria, please try again")
+      alert("Please select one of the following and try again")
       generatePassword()
       return
     }
