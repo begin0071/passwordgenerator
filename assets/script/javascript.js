@@ -130,9 +130,9 @@ var passwordArray = [];
 
 function askQuestions() {
     var response = prompt(`How many characters would you like your password to be?
-  Must be between 9 and 48`);
+  Must be between 8 and 128`);
     numberOfChars = parseInt(response);
-    if (numberOfChars < 9 || numberOfChars > 48 || isNaN(numberOfChars)) {
+    if (numberOfChars < 8 || numberOfChars > 128 || isNaN(numberOfChars)) {
       alert(" Please Try Again")
       generatePassword()
       return
